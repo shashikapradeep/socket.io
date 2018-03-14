@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello world</title>
+</head>
+
+
+<body>
+
+Hello world
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.js"></script>
+
+<script>
+    var socket = io();
+    socket.on('message', function(data){document.write(data)});
+
+    socket.on('newclientconnect',function(data) {
+         document.body.innerHTML = '';
+         document.write(data.description);
+      });
+</script>
+</body>
+
+</html>
